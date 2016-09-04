@@ -25,7 +25,7 @@ Y = np.array(Y)
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 ax.scatter(X[:,0], X[:,1], Y)
-plt.show()
+#plt.show()
 
 
 # apply the equations we learned to calculate a and b
@@ -36,9 +36,10 @@ plt.show()
 w = np.linalg.solve(np.dot(X.T, X), np.dot(X.T, Y))
 Yhat = np.dot(X, w)
 
+print(w)
 
 # determine how good the model is by computing the r-squared
 d1 = Y - Yhat
 d2 = Y - Y.mean()
 r2 = 1 - d1.dot(d1) / d2.dot(d2)
-print "the r-squared is:", r2
+print ("the r-squared is:", r2)
