@@ -14,7 +14,7 @@ def main():
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
     ax.scatter(X[:,0], X[:,1], Y)
-    #plt.show()
+    plt.savefig('lr_2d.vyslexic.png')
 
     X_Transpose = np.transpose(X)
     mat_1=np.linalg.inv(np.matmul(X_Transpose, X))
